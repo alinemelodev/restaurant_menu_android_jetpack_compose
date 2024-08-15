@@ -1,6 +1,5 @@
 package com.aline.alinefood.ui.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -31,10 +30,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.aline.alinefood.R
 import com.aline.alinefood.extensions.toBrazilianCurrency
 import com.aline.alinefood.model.Product
 import com.aline.alinefood.ui.theme.GreyScale40
+import com.aline.alinefood.ui.theme.White
 import com.aline.alinefood.ui.theme.Yellow40
 import com.aline.alinefood.ui.theme.Yellow60
 import com.aline.alinefood.ui.theme.Yellow80
@@ -51,6 +52,7 @@ fun ProductItem(product: Product) {
                 .heightIn(250.dp, 300.dp)
                 .width(200.dp)
                 .verticalScroll(rememberScrollState())
+                .background(color = White)
         ) {
             val imageSize = 110.dp
             Box(
@@ -66,8 +68,8 @@ fun ProductItem(product: Product) {
                         )
                     )
             ) {
-                Image(
-                    painter = painterResource(id = product.image),
+                AsyncImage(
+                    model = product.image,
                     contentDescription = "Imagem do produto",
                     Modifier
                         .size(imageSize)
@@ -77,7 +79,8 @@ fun ProductItem(product: Product) {
                         )
                         .border(2.dp, Yellow40, shape = CircleShape)
                         .align(Alignment.BottomCenter),
-                    contentScale = ContentScale.Crop
+                    contentScale = ContentScale.Crop,
+                    placeholder = painterResource(id = R.drawable.placeholder)
                 )
             }
             Spacer(modifier = Modifier.height(imageSize / 2))

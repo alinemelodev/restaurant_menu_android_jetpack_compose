@@ -2,6 +2,8 @@ package com.aline.alinefood.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+val White = Color(0xFFFFFFFF)
+
 val GreyScale80 = Color(0xFFD8D8D8)
 val GreyScale40 = Color(0xFF545454)
 

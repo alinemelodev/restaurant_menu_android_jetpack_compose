@@ -65,11 +65,11 @@ fun Footer() {
                 painter = painterResource(id = R.drawable.ic_linkedin),
                 contentDescription = "in",
                 Modifier
-                    .size(18.dp)
+                    .size(20.dp)
             )
             Text(
-                text = " in/aline-carvalho-dev",
-                fontSize = 14.sp,
+                text = " aline-melo-dev",
+                fontSize = 16.sp,
                 fontWeight = FontWeight(500),
                 color = GreyScale40,
             )
